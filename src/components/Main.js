@@ -1,21 +1,20 @@
 import { api } from "../utils/api";
-import React from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 
 function Main(props) {
-  const [userName, setuserName] = React.useState();
-  const [userDescription, setuserDescription] = React.useState();
-  const [userAvatar, setuserAvatar] = React.useState();
-  const [cards, setCards] = React.useState([]);
+  const [userName, setuserName] = useState("");
+  const [userDescription, setuserDescription] = useState("");
+  const [userAvatar, setuserAvatar] = useState("");
+  const [cards, setCards] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const initialPromises = Promise.all([
       api.getUserInfo(),
       api.getInitialCards(),
     ]);
 
     initialPromises
-
       .then(([user, card]) => {
         setuserName(user.name);
         setuserDescription(user.about);
@@ -37,7 +36,6 @@ function Main(props) {
             onClick={props.onEditAvatar}
           />
         </div>
-
         <div className="profile__description">
           <div className="profile__container">
             <h1 className="profile__name">{userName}</h1>
@@ -58,7 +56,6 @@ function Main(props) {
       <section className="places">
         <ul className="cards">
           {cards.map((card) => (
-            
             <Card onCardClick={props.onCardClick} card={card} key={card._id} />
           ))}
         </ul>

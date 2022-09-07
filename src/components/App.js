@@ -1,27 +1,27 @@
 import "../pages/index.css";
+import {useState} from 'react';
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
-import React from "react";
+
 
 function App() {
-  const [isEditProfilePopupOpen, handleEditProfileClick] = React.useState(false);
-  const [isAddPlacePopupOpen, handleAddPlaceClick] = React.useState(false);
-  const [isEditAvatarPopupOpen, handleEditAvatarClick] = React.useState(false);
-  const [isConfirmPopupOpen, handleConfirmClick] = React.useState(false);
-  const [selectedCard, handleCardClick] = React.useState();
+  const [isEditProfilePopupOpen, handleEditProfileClick] = useState(false);
+  const [isAddPlacePopupOpen, handleAddPlaceClick] = useState(false);
+  const [isEditAvatarPopupOpen, handleEditAvatarClick] = useState(false);
+  const [isConfirmPopupOpen, handleConfirmClick] = useState(false);
+  const [selectedCard, handleCardClick] = useState(null);
 
   function  closeAllPopups()  {
     handleEditProfileClick(false);
     handleAddPlaceClick(false);
     handleEditAvatarClick(false);
     handleConfirmClick(false);
-    handleCardClick('');
+    handleCardClick(null);
   };
 
-  
   return (
     <div className="page">
       <Header />
@@ -32,7 +32,6 @@ function App() {
         onCardClick={handleCardClick}
       />
       <Footer />
-
       <PopupWithForm
         name="edit"
         title="Редактировать профиль"
@@ -67,7 +66,6 @@ function App() {
           <span className="popup__item-error job-item-error"></span>
         </label>
       </PopupWithForm>
-
       <PopupWithForm
         name="add"
         title="Новое место"
@@ -101,7 +99,6 @@ function App() {
           <span className="popup__item-error link-item-error"></span>
         </label>
       </PopupWithForm>
-
       <PopupWithForm
         name="add-avatar"
         title="Обновить аватар"
@@ -122,7 +119,6 @@ function App() {
           <span className="popup__item-error avatar-item-error"></span>
         </label>
       </PopupWithForm>
-
       <PopupWithForm
         name="confirm"
         title="Вы уверены?"
@@ -130,7 +126,6 @@ function App() {
         onClose={closeAllPopups}
         text="Да"
       ></PopupWithForm>
-
       <ImagePopup 
       card={selectedCard} 
       onClose={closeAllPopups} />

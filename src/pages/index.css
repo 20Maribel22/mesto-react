@@ -25,6 +25,7 @@
 @import '../blocks/cards/__button/_type/cards__button_type_like.css';
 @import '../blocks/cards/__button/_type/cards__button_type_like-active.css';
 @import '../blocks/cards/__button/_type/cards__button_type_del.css';
+@import '../blocks/cards/__button/_type/cards__button_type_del-inactive.css';
 @import '../blocks/footer/footer.css';
 @import '../blocks/footer/__copyright/footer__copyright.css';
 @import '../blocks/popup/popup.css';

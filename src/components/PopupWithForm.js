@@ -7,7 +7,12 @@ function PopupWithForm(props) {
     >
       <div className="popup__container">
         <h3 className="popup__title">{props.title}</h3>
-        <form name={props.name} className="popup__form" novalidate>
+        <form
+          name={props.name}
+          className="popup__form"
+          novalidate
+          onSubmit={props.onSubmit}
+        >
           {props.children}
           <button type="submit" className="popup__button-save">
             {props.text}

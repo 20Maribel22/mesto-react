@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup(props) {
@@ -24,6 +24,11 @@ function AddPlacePopup(props) {
     });
   }
 
+  useEffect(() => {
+    setName("");
+    setLink("");
+  }, [props.isOpen]);
+
   return (
     <PopupWithForm
       name="add"
@@ -42,8 +47,6 @@ function AddPlacePopup(props) {
           id="newname-item"
           name="newname"
           placeholder="Название"
-          minlength="2"
-          maxlength="30"
           required
         />
         <span className="popup__item-error newname-item-error"></span>

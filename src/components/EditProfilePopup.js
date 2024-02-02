@@ -7,7 +7,7 @@ function EditProfilePopup(props) {
   const currentUser = useContext(CurrentUserContext);
   const [name, setName] = useState(currentUser.name);
   const [about, setAbout] = useState(currentUser.about);
-
+  // console.log(currentUser)
   useEffect(() => {
     setName(currentUser.name);
     setAbout(currentUser.about);

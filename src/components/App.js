@@ -123,7 +123,7 @@ function App() {
   function handleCardClick(selectedCard) {
     setSelectedCard(selectedCard);
   }
-
+console.log(currentUser)
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">

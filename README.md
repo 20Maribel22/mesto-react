@@ -6,7 +6,7 @@
 
 **Посмотреть**
 
-* [Ссылка на проект](https://20maribel22.github.io/mesto-react/)
+* [Проект по ссылке](https://20maribel22.github.io/mesto-react/)
 
 **Технологии**
 
